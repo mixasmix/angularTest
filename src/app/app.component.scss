@@ -1,0 +1,61 @@
+@import "../style.scss";
+/*
+Основные классы
+*/
+.align_center_block{
+    display: block;
+    text-align: center;
+}
+.search-block__input{
+    max-width: 500px;
+    min-height: 40px;
+   
+}
+.search-block__submit{
+     @include inputbutton(500px, 40px, 24px); 
+     display: block;
+     width:100%; 
+     margin: 0 auto;
+}
+.search__input-area{
+    text-align: center;
+}
+main{
+    padding: 10px;
+}
+.btn{
+    &:hover, &:focus{
+        color:  $baseColorWhite;
+    }
+}
+.add_backet_btn{
+   @include inputbutton(); 
+}
+
+/*Стили личного кабинета пользователя*/
+.private-user-link{
+    font-size: 20px;
+}
+.private-user-point-icon{
+    width: 32px;
+    height: 32px;
+    background-color: $baseColorWhite;
+    border-radius: 15px;
+    text-align: center;
+    margin-right:10px;
+    & span{
+        font-size: 20px;    
+        vertical-align: middle;
+
+    }
+}
+.private-user-description{
+    color:$secondColor;
+    padding-left: 42px;
+}
+.confirm_order_form{
+    max-width: 500px;
+}
+.confirm_order_form_comment{
+    min-height: 300px;
+}

@@ -1,0 +1,157 @@
+$globalwidth: 980px;
+$bgColorTopNav: #E1E4E7;
+$stdFont:  "Helvetica Neue", Helvetica, Verdana, Arial, Geneva, sans-serif;
+$baseColorBlack:black;
+$baseColorWhite:white;
+$firstColor:#D31F25; /*первый цвет шалона, красный в std*/
+$secondColor:#6E7D94; /*второй цвет шаблона, сервый в std шаблоне*/
+$tridColor:#EE4136; /*третий, вспомогательный, темно красный цвет шаблона*/
+$heightHeader:170px; /*высота header*/
+$heightNavbar:40px;/*высота навигации*/
+$footerHeight:250px; /*высота футера*/
+$footerContentHeight:170px; /*высота блока контента в футере*/
+$fontSizeH4:18px;
+
+$imagePath:'/assets/images';
+
+@mixin icon($left, $top, $h:20px, $w:20px){
+    background-image:url( #{$imagePath}/phone_mail_sprite.png);
+    background-repeat: no-repeat;
+    background-position: $left $top;
+    width: $w;
+    height:$h;
+    color: $baseColorWhite;
+}
+@mixin unlink{ 
+    display: block;
+    text-decoration: none;
+    outline: none;
+}
+/*миксин поля для ввода*/
+@mixin inputtext($w:200px, $h:32px, $fs:16px){
+    border: 1px solid $secondColor;
+    border-radius: 5px;
+    width: $w;
+    height:$h;
+    text-align: center;
+    font-size: 18px;
+    color: $secondColor;
+}
+/*миксин кнопок типа input*/
+@mixin inputbutton($w:200px, $h:32px, $fs:16px){
+    height:$h;
+    border-bottom:4px solid $tridColor;
+    text-align:center;
+    border-radius:5px;
+    max-width:$w;
+    background:$firstColor;
+    cursor:pointer;
+    font-size:$fs;
+    color:$baseColorWhite;
+    outline: none;
+    line-height: $fs;
+    &:active{
+        background:$tridColor;
+	border-bottom:none;
+	border-top:4px solid $firstColor;
+	outline: none;
+    }
+    &:focus{
+        outline: none;
+    }
+    &::hover{
+        background:$tridColor;
+    }
+    &::-moz-focus-inner,
+    &::-moz-focus-inner,
+    &::-moz-focus-inner,
+    &::-moz-focus-inner,
+    &::-moz-focus-inner,
+    &::-moz-focus-inner {
+        border: none;
+    }
+}
+/*миксин кнопок типа ссылка*/
+@mixin a_button($w:200px, $h:32px, $fs:16px){
+    display: block;
+    text-align: center;
+    height: $h;
+    width: $w;
+    margin: 0 auto;
+    line-height: $h;
+    text-decoration: none;
+    background: $firstColor;
+    border-radius: 5px;
+    border-bottom: 4px solid $tridColor;
+    font-size: $fs;
+    color:$baseColorWhite;
+    &:active{
+        background:$tridColor;
+	border-bottom:none;
+	border-top:4px solid $firstColor;
+	outline: none;
+        text-decoration: underline;
+    }
+    &:hover{
+         color:$baseColorWhite;
+        text-decoration: underline;
+    }
+    &:focus{
+        outline: none;
+    }
+    &::-moz-focus-inner,
+    &::-moz-focus-inner,
+    &::-moz-focus-inner,
+    &::-moz-focus-inner,
+    &::-moz-focus-inner,
+    &::-moz-focus-inner {
+        border: none;
+    }
+}
+/*MEDIA queries*/
+$small: 550px;
+$large: 980px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and /*(min-width: $small + 1) and*/ (max-width: $large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $large) { @content; }
+  }
+}
+/**
+вспомогательные классы
+*/
+.display_block{
+    display:block;
+    outline: none;
+}
+.inline_block{
+    display:inline-block;
+    outline: none;
+}
+.flex{
+    display: flex;
+}
+.align_center{
+    text-align: center;
+}
+.align_center_block{
+    margin:0 auto;
+}
+.float_none{
+    float:none;
+}
+.bg_nav{
+    background-color:$bgColorTopNav;
+}
+.padding10{
+    padding:10px;
+}
+.margin10{
+    margin:10px;
+}

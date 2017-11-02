@@ -1,0 +1,81 @@
+@import "../../style.scss";
+.header{
+    min-height: $heightHeader;
+    padding:30px;
+    
+}
+.logo__anchor{
+    width:200px;
+    height:110px;
+    background: url(#{$imagePath}/logo.png) no-repeat 0px 0px;
+    @include respond-to(medium-screens) {
+        margin:0 auto;
+    }
+}
+.contacts__phone, .contacts__email, .social{
+   max-width: 200px;
+    @include respond-to(medium-screens) {
+        margin:0 auto;
+    }
+}
+.contacts__phone-icon{
+    width: 20px;
+    margin: auto 0;
+    @include icon(0, 0);
+}
+.contacts__email-icon{
+    @include icon(0, -20px);
+    margin: auto 0;
+}
+.contacts__phonenumber{
+    color:$secondColor;
+    font-weight:bold;
+}
+.contacts__phonenumber-par{
+    font-size: $fontSizeH4;
+    margin:0px;
+}
+.contacts__email-text{
+    padding-left:10px; 
+}
+.social__graphic-header, .social__graphic-shedile{
+    color:$secondColor;
+    font-weight: bold;
+}
+
+.facebookIcon{
+    @include icon(-20px, 0px);
+     &:hover{
+         @include icon(-20px, -20px);
+    }
+}
+.twitterIcon{
+    @include icon(-43px, 0px);
+     &:hover{
+         @include icon(-43px, -20px);
+    }
+}
+.vkIcon{
+    @include icon(-66px, 0px);
+     &:hover{
+         @include icon(-66px, -20px);
+    }
+}
+.okIcon{
+    @include icon(-89px, 0px);
+     &:hover{
+         @include icon(-89px, -20px);
+    }
+}
+.mailruIcon{
+    @include icon(-112px, 0px);
+     &:hover{
+         @include icon(-112px, -20px);
+    }
+}
+.social__graphicSocialLinkList{
+    list-style-type: none;
+    justify-content: space-between;
+    padding-left:10px;
+    max-width: 160px;
+}

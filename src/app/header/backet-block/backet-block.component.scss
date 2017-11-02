@@ -1,0 +1,38 @@
+@import "../../../style.scss";
+.backet, .login{
+     @include respond-to(medium-screens) {
+        margin: 0 auto;
+    }
+    max-width: 250px;
+}
+.backet__counter, .backet__summ{
+    height:35px;
+    color:$baseColorWhite;
+    font-weight:bold;
+    line-height:35px;
+    text-align:center;
+}
+.backet__counter{
+    background: $firstColor;
+    position:relative;
+    &::after{
+        content:'';
+        position:absolute;
+        left:0;
+        top:0;
+        background-color: $tridColor;
+        @include icon(-13px, -37px, 35px, 35px);
+        widht:35px;
+        height:35px;
+    }
+}
+.backet__summ{
+    background: $secondColor;
+}
+.login{
+   margin-top:10px;
+}
+.login__link{
+    color:$secondColor;
+    font-weight: bold;
+}
